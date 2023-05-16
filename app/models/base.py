@@ -5,11 +5,11 @@ from pydantic import BaseModel, validator
 
 
 class MapperSchema(BaseModel):
-    name: str
-    collections: List[str]
+    database_name: str
+    model_path: List[str]
 
-    @validator("collections")
-    def validate_class_path(cls, value):
+    @validator("model_path")
+    def validate_model_path(cls, value):
         for path in value:
             try:
                 module_name, class_name = path.rsplit(".", 1)
