@@ -11,8 +11,10 @@ from app.models.base import MapperSchema
 def database_collection_mapper() -> MapperSchema:
     models = [
         {
-            "database_name": "beanie",
-            "model_paths": [],
+            "database_name": "database_1",
+            "model_paths": [
+                "app.models.properties.User",
+            ],
         }
     ]
 
@@ -20,11 +22,11 @@ def database_collection_mapper() -> MapperSchema:
 
 
 async def pool_database_clients() -> None:
-    _ = AsyncIOMotorClient(settings.MONGO_URI)
+    client = AsyncIOMotorClient(settings.MONGO_URI)
     models: List[MapperSchema] = database_collection_mapper()
 
     for model in models:
         await init_beanie(
-            database=model.database_name,
+            database=client[model.database_name],
             document_models=model.model_paths,
         )
