@@ -7,7 +7,7 @@ from pydantic import BaseModel, validator
 from app.utilities.formatters import format_datetime_into_isoformat
 
 
-class BaseDocument(BaseModel):
+class BaseModelConfig(BaseModel):
     class Config:
         orm_mode: bool = True
         use_enum_values: bool = True
