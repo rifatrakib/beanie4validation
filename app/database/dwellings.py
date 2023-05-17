@@ -10,17 +10,17 @@ class PropertyDocument(Document, PropertyModel):
 
 
 class BuildingDocument(Document, BuildingModel):
-    property_id: Link[PropertyModel]
+    property: Link[PropertyDocument]
 
     class Settings:
         name = "buildings"
-        indexes = ["building_id", "property_id", "address", "price", "floors"]
+        indexes = ["building_id", "address", "price", "floors"]
 
 
 class UnitDocument(Document, UnitModel):
-    property_id: Link[PropertyModel]
-    building_id: Link[BuildingModel]
+    property: Link[PropertyDocument]
+    building: Link[BuildingDocument]
 
     class Settings:
         name = "units"
-        indexes = ["unit_id", "building_id", "property_id", "address", "bedrooms", "bathrooms", "price"]
+        indexes = ["unit_id", "address", "bedrooms", "bathrooms", "price"]
