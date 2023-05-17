@@ -13,9 +13,11 @@ def database_collection_mapper() -> MapperSchema:
         {
             "database_name": "database_1",
             "model_paths": [
-                "app.models.properties.User",
+                "app.database.dwellings.PropertyDocument",
+                "app.database.dwellings.BuildingDocument",
+                "app.database.dwellings.UnitDocument",
             ],
-        }
+        },
     ]
 
     return parse_obj_as(type_=List[MapperSchema], obj=models)
