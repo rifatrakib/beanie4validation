@@ -11,7 +11,7 @@ class PropertyTransactionDocument(Document, PropertyTransactionModel):
     seller: Link[PersonDocument]
 
     class Settings:
-        collection = "property_transactions"
+        name = "property_transactions"
 
 
 class UnitTransactionDocument(Document, UnitTransactionModel):
@@ -20,4 +20,4 @@ class UnitTransactionDocument(Document, UnitTransactionModel):
     seller: Link[PersonDocument]
 
     class Settings:
-        collection = "unit_transactions"
+        name = "unit_transactions"
