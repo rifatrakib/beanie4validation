@@ -18,7 +18,6 @@ class BuildingDocument(Document, BuildingModel):
 
 
 class UnitDocument(Document, UnitModel):
-    property: Link[PropertyDocument]
     building: Link[BuildingDocument]
 
     class Settings:
