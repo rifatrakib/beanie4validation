@@ -1,0 +1,204 @@
+[
+    {
+        "unit_id": 1,
+        "description": "Modern apartment with city view",
+        "address": "123 Main St, City",
+        "price": 2000.0,
+        "type": "Apartment",
+        "area": 800.0,
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "amenities": [
+            "Swimming pool",
+            "Gym",
+            "Balcony"
+        ],
+        "building": {
+            "building_id": 1,
+            "description": "Modern office building",
+            "address": "10 Business Ave, City",
+            "price": 5000000.0,
+            "type": "Office Building",
+            "area": 10000.0,
+            "floors": 10,
+            "underground": 3,
+            "parking": 50,
+            "status": "Active",
+            "established_at": "2005-07-15T00:00:00Z",
+            "property": {
+                "property_id": 1,
+                "description": "Spacious apartment with a view",
+                "address": "123 Main St, City",
+                "price": 250000.0,
+                "type": "Apartment",
+                "area": 1200.0,
+                "bedrooms": 2,
+                "bathrooms": 2,
+                "common_parking": true,
+                "parking": 1,
+                "status": "Active"
+            }
+        }
+    },
+    {
+        "unit_id": 2,
+        "description": "Cozy studio in a quiet neighborhood",
+        "address": "456 Elm St, Suburb",
+        "price": 1200.0,
+        "type": "Studio",
+        "area": 500.0,
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "amenities": [
+            "Laundry facility",
+            "Parking space"
+        ],
+        "building": {
+            "building_id": 2,
+            "description": "Luxury apartment complex",
+            "address": "123 Park Lane, Downtown",
+            "price": 15000000.0,
+            "type": "Residential Building",
+            "area": 20000.0,
+            "floors": 20,
+            "underground": 5,
+            "parking": 100,
+            "status": "Active",
+            "established_at": "2010-04-01T00:00:00Z",
+            "property": {
+                "property_id": 2,
+                "description": "Cozy single-family home",
+                "address": "456 Elm St, Suburb",
+                "price": 350000.0,
+                "type": "House",
+                "area": 1800.0,
+                "bedrooms": 3,
+                "bathrooms": 2,
+                "common_parking": false,
+                "parking": 2,
+                "status": "Active"
+            }
+        }
+    },
+    {
+        "unit_id": 3,
+        "description": "Spacious townhome with backyard",
+        "address": "789 Oak St, Suburb",
+        "price": 2500.0,
+        "type": "Townhome",
+        "area": 1500.0,
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "amenities": [
+            "Private garage",
+            "Central heating"
+        ],
+        "building": {
+            "building_id": 3,
+            "description": "Mixed-use development",
+            "address": "456 Main St, Suburb",
+            "price": 8000000.0,
+            "type": "Mixed-Use Building",
+            "area": 15000.0,
+            "floors": 12,
+            "underground": 2,
+            "parking": 70,
+            "status": "Active",
+            "established_at": "2015-09-22T00:00:00Z",
+            "property": {
+                "property_id": 3,
+                "description": "Luxurious penthouse with city views",
+                "address": "789 Oak St, Downtown",
+                "price": 1500000.0,
+                "type": "Penthouse",
+                "area": 3000.0,
+                "bedrooms": 4,
+                "bathrooms": 3,
+                "common_parking": true,
+                "parking": 2,
+                "status": "Active"
+            }
+        }
+    },
+    {
+        "unit_id": 4,
+        "description": "Charming cottage by the beach",
+        "address": "321 Pine St, Coastal",
+        "price": 1800.0,
+        "type": "Cottage",
+        "area": 1000.0,
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "amenities": [
+            "Fireplace",
+            "Ocean view"
+        ],
+        "building": {
+            "building_id": 4,
+            "description": "Historic building converted to condos",
+            "address": "789 Elm St, City",
+            "price": 12000000.0,
+            "type": "Condo Conversion",
+            "area": 18000.0,
+            "floors": 8,
+            "underground": 1,
+            "parking": 40,
+            "status": "Active",
+            "established_at": "1920-06-12T00:00:00Z",
+            "property": {
+                "property_id": 4,
+                "description": "Modern townhouse in a gated community",
+                "address": "321 Pine St, Suburb",
+                "price": 450000.0,
+                "type": "Townhouse",
+                "area": 2000.0,
+                "bedrooms": 3,
+                "bathrooms": 3,
+                "common_parking": true,
+                "parking": 1,
+                "status": "Active"
+            }
+        }
+    },
+    {
+        "unit_id": 5,
+        "description": "Luxury penthouse with rooftop terrace",
+        "address": "987 Beach Rd, City",
+        "price": 4000.0,
+        "type": "Penthouse",
+        "area": 2000.0,
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "amenities": [
+            "Private elevator",
+            "Outdoor kitchen",
+            "Jacuzzi"
+        ],
+        "building": {
+            "building_id": 5,
+            "description": "Retail plaza with multiple shops",
+            "address": "987 Market Ave, Suburb",
+            "price": 6000000.0,
+            "type": "Retail Building",
+            "area": 25000.0,
+            "floors": 1,
+            "underground": null,
+            "parking": 80,
+            "status": "Active",
+            "established_at": "1999-11-05T00:00:00Z",
+            "property": {
+                "property_id": 5,
+                "description": "Charming cottage near the beach",
+                "address": "987 Beach Rd, Coastal",
+                "price": 300000.0,
+                "type": "Cottage",
+                "area": 1500.0,
+                "bedrooms": 2,
+                "bathrooms": 1,
+                "common_parking": false,
+                "parking": 1,
+                "status": "Active"
+            }
+        }
+    }
+]
