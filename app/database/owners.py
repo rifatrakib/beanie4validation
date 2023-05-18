@@ -13,13 +13,13 @@ from app.models.owners import (
 
 class PersonDocument(Document, PersonModel):
     class Settings:
-        collection = "people"
+        name = "people"
         indexes = ["person_id", "first_name", "last_name", "address"]
 
 
 class CompanyDocument(Document, CompanyModel):
     class Settings:
-        collection = "companies"
+        name = "companies"
         indexes = ["company_id", "name", "address"]
 
 
@@ -28,7 +28,7 @@ class EmploymentDocument(Document, EmploymentModel):
     company: Link[CompanyDocument]
 
     class Settings:
-        collection = "employments"
+        name = "employments"
         indexes = ["role"]
 
 
@@ -37,7 +37,7 @@ class CompanyOwnerDocument(Document, CompanyOwnerModel):
     company: Link[CompanyDocument]
 
     class Settings:
-        collection = "company_owners"
+        name = "company_owners"
 
 
 class PropertyOwnerDocument(Document, PropertyOwnerModel):
@@ -45,7 +45,7 @@ class PropertyOwnerDocument(Document, PropertyOwnerModel):
     property: Link[PropertyDocument]
 
     class Settings:
-        collection = "property_owners"
+        name = "property_owners"
 
 
 class UnitOwnerDocument(Document, UnitOwnerModel):
@@ -53,4 +53,4 @@ class UnitOwnerDocument(Document, UnitOwnerModel):
     property: Link[UnitDocument]
 
     class Settings:
-        collection = "unit_owners"
+        name = "unit_owners"
