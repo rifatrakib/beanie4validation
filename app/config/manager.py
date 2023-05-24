@@ -8,6 +8,7 @@ from pydantic import parse_file_as, parse_obj_as
 from app.config.factory import settings
 from app.database.dwellings import PropertyDocument, UnitDocument
 from app.database.owners import PersonDocument, PropertyOwnerDocument, UnitOwnerDocument
+from app.database.transactions import PropertyTransactionDocument, UnitTransactionDocument
 from app.models.base import MapperSchema
 
 
@@ -78,6 +79,40 @@ async def initialize():
             unit=unit,
             owned_share=unit_ownership["owned_share"],
             from_date=unit_ownership["from_date"],
+        )
+        await record.save()
+
+    with open("app/resources/property-transaction-data.json", "r") as f:
+        property_transactions = json.load(f)
+
+    for property_transaction in property_transactions:
+        buyer = await PersonDocument.find_one({"person_id": property_transaction["buyer_id"]})
+        seller = await PersonDocument.find_one({"person_id": property_transaction["seller_id"]})
+        property = await PropertyDocument.find_one({"property_id": property_transaction["property_id"]})
+        record = PropertyTransactionDocument(
+            buyer=buyer,
+            seller=seller,
+            property=property,
+            amount=property_transaction["amount"],
+            date=property_transaction["date"],
+            type=property_transaction["type"],
+        )
+        await record.save()
+
+    with open("app/resources/unit-transaction-data.json", "r") as f:
+        unit_transactions = json.load(f)
+
+    for unit_transaction in unit_transactions:
+        buyer = await PersonDocument.find_one({"person_id": unit_transaction["buyer_id"]})
+        seller = await PersonDocument.find_one({"person_id": unit_transaction["seller_id"]})
+        unit = await UnitDocument.find_one({"unit_id": unit_transaction["unit_id"]})
+        record = UnitTransactionDocument(
+            buyer=buyer,
+            seller=seller,
+            unit=unit,
+            amount=unit_transaction["amount"],
+            date=unit_transaction["date"],
+            type=unit_transaction["type"],
         )
         await record.save()
 

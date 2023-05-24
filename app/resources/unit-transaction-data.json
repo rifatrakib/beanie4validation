@@ -1,0 +1,42 @@
+[
+    {
+        "date": "2020-01-01T00:00:00Z",
+        "amount": 100000.0,
+        "type": "Purchase",
+        "unit_id": 1,
+        "buyer_id": 1,
+        "seller_id": 2
+    },
+    {
+        "date": "2019-05-15T00:00:00Z",
+        "amount": 50000.0,
+        "type": "Sale",
+        "unit_id": 2,
+        "buyer_id": 1,
+        "seller_id": 3
+    },
+    {
+        "date": "2021-03-10T00:00:00Z",
+        "amount": 75000.0,
+        "type": "Purchase",
+        "unit_id": 3,
+        "buyer_id": 2,
+        "seller_id": 1
+    },
+    {
+        "date": "2018-09-01T00:00:00Z",
+        "amount": 80000.0,
+        "type": "Sale",
+        "unit_id": 4,
+        "buyer_id": 3,
+        "seller_id": 2
+    },
+    {
+        "date": "2022-06-01T00:00:00Z",
+        "amount": 120000.0,
+        "type": "Purchase",
+        "unit_id": 5,
+        "buyer_id": 3,
+        "seller_id": 1
+    }
+]
