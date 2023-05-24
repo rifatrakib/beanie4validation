@@ -1,0 +1,41 @@
+[
+    {
+        "person_id": 1,
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "johndoe@example.com",
+        "phone": "1234567890",
+        "website": "http://www.example.com",
+        "address": "123 Main Street, City, Country",
+        "links": [
+            "http://www.linkedin.com/johndoe",
+            "http://www.github.com/johndoe"
+        ]
+    },
+    {
+        "person_id": 2,
+        "first_name": "Jane",
+        "last_name": "Smith",
+        "email": "janesmith@example.com",
+        "phone": "9876543210",
+        "website": "http://www.janesmith.com",
+        "address": "456 Elm Street, City, Country",
+        "links": [
+            "http://www.linkedin.com/janesmith",
+            "http://www.github.com/janesmith"
+        ]
+    },
+    {
+        "person_id": 3,
+        "first_name": "Alice",
+        "last_name": "Johnson",
+        "email": "alicejohnson@example.com",
+        "phone": "5555555555",
+        "website": "http://www.alicejohnson.com",
+        "address": "789 Oak Street, City, Country",
+        "links": [
+            "http://www.linkedin.com/alicejohnson",
+            "http://www.github.com/alicejohnson"
+        ]
+    }
+]

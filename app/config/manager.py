@@ -1,3 +1,4 @@
+import json
 from typing import List
 
 from beanie import init_beanie
@@ -5,7 +6,8 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import parse_file_as, parse_obj_as
 
 from app.config.factory import settings
-from app.database.dwellings import UnitDocument
+from app.database.dwellings import PropertyDocument, UnitDocument
+from app.database.owners import PersonDocument, PropertyOwnerDocument, UnitOwnerDocument
 from app.models.base import MapperSchema
 
 
@@ -18,9 +20,6 @@ def database_collection_mapper() -> MapperSchema:
                 "app.database.dwellings.BuildingDocument",
                 "app.database.dwellings.UnitDocument",
                 "app.database.owners.PersonDocument",
-                "app.database.owners.CompanyDocument",
-                "app.database.owners.EmploymentDocument",
-                "app.database.owners.CompanyOwnerDocument",
                 "app.database.owners.PropertyOwnerDocument",
                 "app.database.owners.UnitOwnerDocument",
                 "app.database.transactions.PropertyTransactionDocument",
@@ -49,6 +48,38 @@ async def initialize():
         await unit.building.property.save()
         await unit.building.save()
         await unit.save()
+
+    persons = parse_file_as(path="app/resources/persons-data.json", type_=List[PersonDocument])
+    for person in persons:
+        await person.save()
+
+    with open("app/resources/property-ownership-data.json", "r") as f:
+        property_ownerships = json.load(f)
+
+    for property_ownership in property_ownerships:
+        person = await PersonDocument.find_one({"person_id": property_ownership["person_id"]})
+        property = await PropertyDocument.find_one({"property_id": property_ownership["property_id"]})
+        record = PropertyOwnerDocument(
+            person=person,
+            property=property,
+            owned_share=property_ownership["owned_share"],
+            from_date=property_ownership["from_date"],
+        )
+        await record.save()
+
+    with open("app/resources/unit-ownership-data.json", "r") as f:
+        unit_ownerships = json.load(f)
+
+    for unit_ownership in unit_ownerships:
+        person = await PersonDocument.find_one({"person_id": unit_ownership["person_id"]})
+        unit = await UnitDocument.find_one({"unit_id": unit_ownership["unit_id"]})
+        record = UnitOwnerDocument(
+            person=person,
+            unit=unit,
+            owned_share=unit_ownership["owned_share"],
+            from_date=unit_ownership["from_date"],
+        )
+        await record.save()
 
 
 async def populate_collections():

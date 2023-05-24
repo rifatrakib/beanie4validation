@@ -1,0 +1,32 @@
+[
+    {
+        "owned_share": 0.5,
+        "from_date": "2020-01-01T00:00:00Z",
+        "person_id": 1,
+        "property_id": 1
+    },
+    {
+        "owned_share": 0.25,
+        "from_date": "2019-05-15T00:00:00Z",
+        "person_id": 1,
+        "property_id": 2
+    },
+    {
+        "owned_share": 0.75,
+        "from_date": "2021-03-10T00:00:00Z",
+        "person_id": 2,
+        "property_id": 3
+    },
+    {
+        "owned_share": 0.1,
+        "from_date": "2018-09-01T00:00:00Z",
+        "person_id": 3,
+        "property_id": 4
+    },
+    {
+        "owned_share": 0.9,
+        "from_date": "2022-06-01T00:00:00Z",
+        "person_id": 3,
+        "property_id": 5
+    }
+]
